@@ -11,7 +11,7 @@ from pathlib import Path
 
 task_id = 1  # 1, 2, 3, 4
 nr_col = task_id-1
-version = "BP_with_retrain"  # BP_with_retrain, BP_without_retrain,
+version = "BP_without_retrain"  # BP_with_retrain, BP_without_retrain,
 # Abdollahi_with_retrain, Abdollahi_without_retrain
 
 print(f"Version: {version}, task: {task_id}")
@@ -41,14 +41,14 @@ prep_data.load_data('data_rain.mat', 'rain', hm_samples,
 prep_data.load_data('data_storm.mat', 'storm', hm_samples,
                     inputs, targets, measurements, bias, coeff,
                     r_inputs=r_inputs, r_targets=r_targets, r_measurements=r_measurements)
-labels = [r"$X_\mathrm{DCO}(t) ~ \mathrm{[mg~COD~l^{-1}]}$",
-          r"$X_\mathrm{BH}(t) ~ \mathrm{[mg~COD~l^{-1}]}$",
-          r"$X_\mathrm{BA}(t) ~ \mathrm{[mg~COD~l^{-1}]}$",
-          r"$S_\mathrm{O_2}(t) ~ \mathrm{[mg~O_2~l^{-1}]}$",
-          r"$S_\mathrm{NO}(t) ~ \mathrm{[mg~N~l^{-1}]}$",
-          r"$S_\mathrm{NH}(t) ~ \mathrm{[mg~N~l^{-1}]}$"]
+labels = [r"$X_\mathrm{DCO}(t) ~ \mathrm{[g~COD~m^{-1}]}$",
+          r"$X_\mathrm{BH}(t) ~ \mathrm{[g~COD~m^{-1}]}$",
+          r"$X_\mathrm{BA}(t) ~ \mathrm{[g~COD~m^{-1}]}$",
+          r"$S_\mathrm{O_2}(t) ~ \mathrm{[g~O_2~m^{-1}]}$",
+          r"$S_\mathrm{NO}(t) ~ \mathrm{[g~N~m^{-1}]}$",
+          r"$S_\mathrm{NH}(t) ~ \mathrm{[g~N~m^{-1}]}$"]
 
-if nr_col != 4:
+if nr_col != 3:
     for d in d_names:
         targets[d] = np.concatenate((targets[d][:, nr_col].reshape(-1, 1),
                                      targets[d][:, 3:]), axis=1)

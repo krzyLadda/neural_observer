@@ -89,8 +89,8 @@ config = {
     "maxTime": None,  # maximal time of evolution
     "hmSamples": hm_samples,  # number of learning data samples
     "popSize": 50,  # size of population
-    "useParralel": True,  # use parralel computation?
-    "hmWorkers": 32,  # number of parralel workers (threads)
+    "useParralel": False,  # use parralel computation?
+    "hmWorkers": 10,  # number of parralel workers (threads)
     "hmDays": hm_days,
     "sysRank": hmX,
     "hmU": hmU,
