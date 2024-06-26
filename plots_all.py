@@ -39,12 +39,12 @@ for task_id in [1, 2, 3, 4]:
         prep_data.load_data('data_storm.mat', 'storm', hm_samples,
                             inputs, targets, measurements, bias, coeff,
                             r_inputs=r_inputs, r_targets=r_targets, r_measurements=r_measurements)
-        labels = [r"$X_\mathrm{DCO}(t) ~ \mathrm{[g~COD~m^{-1}]}$",
-                  r"$X_\mathrm{BH}(t) ~ \mathrm{[g~COD~m^{-1}]}$",
-                  r"$X_\mathrm{BA}(t) ~ \mathrm{[g~COD~m^{-1}]}$",
-                  r"$S_\mathrm{O_2}(t) ~ \mathrm{[g~O_2~m^{-1}]}$",
-                  r"$S_\mathrm{NO}(t) ~ \mathrm{[g~N~m^{-1}]}$",
-                  r"$S_\mathrm{NH}(t) ~ \mathrm{[g~N~m^{-1}]}$"]
+        labels = [r"$X_\mathrm{DCO}(t) ~ \mathrm{[g~COD~m^{-3}]}$",
+                  r"$X_\mathrm{BH}(t) ~ \mathrm{[g~COD~m^{-3}]}$",
+                  r"$X_\mathrm{BA}(t) ~ \mathrm{[g~COD~m^{-3}]}$",
+                  r"$S_\mathrm{O_2}(t) ~ \mathrm{[g~O_2~m^{-3}]}$",
+                  r"$S_\mathrm{NO}(t) ~ \mathrm{[g~N~m^{-3}]}$",
+                  r"$S_\mathrm{NH}(t) ~ \mathrm{[g~N~m^{-3}]}$"]
 
         if nr_col != 3:
             for d in d_names:
